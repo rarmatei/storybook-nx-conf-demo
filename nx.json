@@ -1,34 +1,26 @@
 {
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "storybook-test",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "bike-store": {
-      "tags": []
-    },
-    "bike-store-e2e": {
-      "tags": [],
-      "implicitDependencies": ["bike-store"]
-    }
+    "bike-store": { "tags": [] },
+    "bike-store-e2e": { "tags": [], "implicitDependencies": ["bike-store"] },
+    "common-ui-progress-meter": { "tags": [] },
+    "order-pizza": { "tags": [] },
+    "order-pizza-e2e": { "tags": [], "implicitDependencies": ["order-pizza"] },
+    "common-ui-image-radio-buttons": { "tags": [] }
   }
 }

@@ -1,23 +1,12 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
+  "cli": { "defaultCollection": "@nrwl/react" },
   "defaultProject": "bike-store",
   "generators": {
     "@nrwl/react": {
-      "application": {
-        "style": "css",
-        "linter": "eslint",
-        "babel": true
-      },
-      "component": {
-        "style": "css"
-      },
-      "library": {
-        "style": "css",
-        "linter": "eslint"
-      }
+      "application": { "style": "css", "linter": "eslint", "babel": true },
+      "component": { "style": "css" },
+      "library": { "style": "css", "linter": "eslint" }
     }
   },
   "projects": {
@@ -70,13 +59,9 @@
         },
         "serve": {
           "executor": "@nrwl/web:dev-server",
-          "options": {
-            "buildTarget": "bike-store:build"
-          },
+          "options": { "buildTarget": "bike-store:build" },
           "configurations": {
-            "production": {
-              "buildTarget": "bike-store:build:production"
-            }
+            "production": { "buildTarget": "bike-store:build:production" }
           }
         },
         "lint": {
@@ -108,15 +93,153 @@
             "devServerTarget": "bike-store:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "bike-store:serve:production"
-            }
+            "production": { "devServerTarget": "bike-store:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/bike-store-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "common-ui-progress-meter": {
+      "root": "libs/common/ui-progress-meter",
+      "sourceRoot": "libs/common/ui-progress-meter/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/ui-progress-meter/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/ui-progress-meter"],
+          "options": {
+            "jestConfig": "libs/common/ui-progress-meter/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "order-pizza": {
+      "root": "apps/order-pizza",
+      "sourceRoot": "apps/order-pizza/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/order-pizza",
+            "index": "apps/order-pizza/src/index.html",
+            "main": "apps/order-pizza/src/main.tsx",
+            "polyfills": "apps/order-pizza/src/polyfills.ts",
+            "tsConfig": "apps/order-pizza/tsconfig.app.json",
+            "assets": [
+              "apps/order-pizza/src/favicon.ico",
+              "apps/order-pizza/src/assets"
+            ],
+            "styles": ["apps/order-pizza/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/order-pizza/src/environments/environment.ts",
+                  "with": "apps/order-pizza/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": { "buildTarget": "order-pizza:build" },
+          "configurations": {
+            "production": { "buildTarget": "order-pizza:build:production" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/order-pizza/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/order-pizza"],
+          "options": {
+            "jestConfig": "apps/order-pizza/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "order-pizza-e2e": {
+      "root": "apps/order-pizza-e2e",
+      "sourceRoot": "apps/order-pizza-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/order-pizza-e2e/cypress.json",
+            "tsConfig": "apps/order-pizza-e2e/tsconfig.e2e.json",
+            "devServerTarget": "order-pizza:serve"
+          },
+          "configurations": {
+            "production": { "devServerTarget": "order-pizza:serve:production" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/order-pizza-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "common-ui-image-radio-buttons": {
+      "root": "libs/common/ui-image-radio-buttons",
+      "sourceRoot": "libs/common/ui-image-radio-buttons/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/ui-image-radio-buttons/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/ui-image-radio-buttons"],
+          "options": {
+            "jestConfig": "libs/common/ui-image-radio-buttons/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

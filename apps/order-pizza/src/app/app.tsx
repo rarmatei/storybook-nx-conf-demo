@@ -5,12 +5,22 @@ import styles from './app.module.css';
 import { ReactComponent as Logo } from './logo.svg';
 import star from './star.svg';
 import { CommonUiImageRadioButtons } from '@storybook-test/common/ui-image-radio-buttons';
+import { Image } from '@chakra-ui/react';
 
 export function App() {
   const options = [
-    { value: 'first', image: <div>FIRST</div> },
-    { value: 'half', image: <div>HALF</div> },
-    { value: 'full', image: <div>FULL</div> },
+    {
+      value: 'first',
+      image: <Image maxW="100px" maxH="100px" src="/assets/slice.png"></Image>,
+    },
+    {
+      value: 'half',
+      image: <Image maxW="100px" maxH="100px" src="/assets/half.png"></Image>,
+    },
+    {
+      value: 'full',
+      image: <Image maxW="100px" maxH="100px" src="/assets/full.png"></Image>,
+    },
   ];
 
   return (

@@ -8,5 +8,9 @@ module.exports = {
     '<rootDir>/libs/common/ui-input',
     '<rootDir>/libs/common/ui-form',
     '<rootDir>/libs/common/ui-multi-select',
+    '<rootDir>/libs/order-pizza/feature-payment-gateway',
+    '<rootDir>/libs/admin/feature-manage-orders',
+    '<rootDir>/apps/admin',
+    '<rootDir>/libs/admin/feature-delivery-scheduler',
   ],
 };

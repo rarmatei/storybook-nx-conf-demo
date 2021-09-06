@@ -28,6 +28,15 @@
       "@storybook-test/common/ui-form": ["libs/common/ui-form/src/index.ts"],
       "@storybook-test/common/ui-multi-select": [
         "libs/common/ui-multi-select/src/index.ts"
+      ],
+      "@storybook-test/order-pizza/feature-payment-gateway": [
+        "libs/order-pizza/feature-payment-gateway/src/index.ts"
+      ],
+      "@storybook-test/admin/feature-manage-orders": [
+        "libs/admin/feature-manage-orders/src/index.ts"
+      ],
+      "@storybook-test/admin/feature-delivery-scheduler": [
+        "libs/admin/feature-delivery-scheduler/src/index.ts"
       ]
     }
   },

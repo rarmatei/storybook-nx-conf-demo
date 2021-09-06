@@ -55,6 +55,11 @@
     "common-ui-progress-meter-e2e": {
       "tags": [],
       "implicitDependencies": ["common-ui-progress-meter"]
-    }
+    },
+    "order-pizza-feature-payment-gateway": { "tags": [] },
+    "admin-feature-manage-orders": { "tags": [] },
+    "admin": { "tags": [] },
+    "admin-e2e": { "tags": [], "implicitDependencies": ["admin"] },
+    "admin-feature-delivery-scheduler": { "tags": [] }
   }
 }

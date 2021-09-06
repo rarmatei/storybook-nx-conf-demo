@@ -44,6 +44,7 @@
     "@babel/preset-typescript": "7.9.0",
     "@nrwl/cli": "11.5.1",
     "@nrwl/cypress": "11.5.1",
+    "@nrwl/devkit": "11.5.1",
     "@nrwl/eslint-plugin-nx": "11.5.1",
     "@nrwl/jest": "11.5.1",
     "@nrwl/linter": "11.5.1",

@@ -13,5 +13,6 @@ module.exports = {
     '<rootDir>/apps/admin',
     '<rootDir>/libs/admin/feature-delivery-scheduler',
     '<rootDir>/libs/order-pizza/ui-pizza-image',
+    '<rootDir>/libs/common/data-access-graphql',
   ],
 };

@@ -56,6 +56,7 @@
     "admin": { "tags": [] },
     "admin-e2e": { "tags": [], "implicitDependencies": ["admin"] },
     "admin-feature-delivery-scheduler": { "tags": [] },
-    "order-pizza-ui-pizza-image": { "tags": [] }
+    "order-pizza-ui-pizza-image": { "tags": [] },
+    "common-data-access-graphql": { "tags": [] }
   }
 }

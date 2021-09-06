@@ -626,6 +626,27 @@
           }
         }
       }
+    },
+    "common-data-access-graphql": {
+      "root": "libs/common/data-access-graphql",
+      "sourceRoot": "libs/common/data-access-graphql/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/common/data-access-graphql/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/data-access-graphql"],
+          "options": {
+            "jestConfig": "libs/common/data-access-graphql/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

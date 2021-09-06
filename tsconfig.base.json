@@ -37,6 +37,9 @@
       ],
       "@storybook-test/order-pizza/ui-pizza-image": [
         "libs/order-pizza/ui-pizza-image/src/index.ts"
+      ],
+      "@storybook-test/common/data-access-graphql": [
+        "libs/common/data-access-graphql/src/index.ts"
       ]
     }
   },

@@ -10,7 +10,7 @@ import {
 } from '@storybook-test/common/ui-multi-select';
 import { CommonUiForm } from '@storybook-test/common/ui-form';
 import { CommonUiInput } from '@storybook-test/common/ui-input';
-// import { CommonUiDescribedImage } from '@storybook-test/order-pizza/ui-pizza-image';
+import { OrderPizzaUiPizzaImage } from '@storybook-test/order-pizza/ui-pizza-image';
 
 export function App() {
   const formRef = useRef();
@@ -18,7 +18,7 @@ export function App() {
     {
       value: 'slice',
       image: (
-        <CommonUiDescribedImage
+        <OrderPizzaUiPizzaImage
           imageSrc="/assets/slice.png"
           description="The Single Library"
         />
@@ -27,7 +27,7 @@ export function App() {
     {
       value: 'half',
       image: (
-        <CommonUiDescribedImage
+        <OrderPizzaUiPizzaImage
           imageSrc="/assets/half.png"
           description="The 50% affected"
         />
@@ -36,7 +36,7 @@ export function App() {
     {
       value: 'full',
       image: (
-        <CommonUiDescribedImage
+        <OrderPizzaUiPizzaImage
           imageSrc="/assets/full.png"
           description="The Full Monorepo"
         />

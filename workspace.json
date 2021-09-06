@@ -603,6 +603,29 @@
           }
         }
       }
+    },
+    "order-pizza-ui-pizza-image": {
+      "root": "libs/order-pizza/ui-pizza-image",
+      "sourceRoot": "libs/order-pizza/ui-pizza-image/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/order-pizza/ui-pizza-image/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/order-pizza/ui-pizza-image"],
+          "options": {
+            "jestConfig": "libs/order-pizza/ui-pizza-image/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

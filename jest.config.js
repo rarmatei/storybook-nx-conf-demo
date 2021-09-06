@@ -12,5 +12,6 @@ module.exports = {
     '<rootDir>/libs/admin/feature-manage-orders',
     '<rootDir>/apps/admin',
     '<rootDir>/libs/admin/feature-delivery-scheduler',
+    '<rootDir>/libs/order-pizza/ui-pizza-image',
   ],
 };

@@ -34,6 +34,9 @@
       ],
       "@storybook-test/admin/feature-delivery-scheduler": [
         "libs/admin/feature-delivery-scheduler/src/index.ts"
+      ],
+      "@storybook-test/order-pizza/ui-pizza-image": [
+        "libs/order-pizza/ui-pizza-image/src/index.ts"
       ]
     }
   },

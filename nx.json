@@ -55,6 +55,7 @@
     "admin-feature-manage-orders": { "tags": [] },
     "admin": { "tags": [] },
     "admin-e2e": { "tags": [], "implicitDependencies": ["admin"] },
-    "admin-feature-delivery-scheduler": { "tags": [] }
+    "admin-feature-delivery-scheduler": { "tags": [] },
+    "order-pizza-ui-pizza-image": { "tags": [] }
   }
 }

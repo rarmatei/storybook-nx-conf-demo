@@ -16,6 +16,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { calculatePercentageComplete } from './util';
 
 export function App() {
   const elementRef = useRef();
@@ -51,23 +52,8 @@ export function App() {
 
   const [percentageComplete, setPercentageComplete] = useState(0);
 
-  const onChange = (v: any) => {
-    const elements: HTMLFormElement[] = Array.from(
-      (elementRef as any).current.elements
-    );
-    let percentage = 0;
-    if (elements[0].value) {
-      percentage += 25;
-    }
-    if (elements[1].value) {
-      percentage += 25;
-    }
-    if (elements.slice(2, 5).some((e) => e.checked)) {
-      percentage += 25;
-    }
-    if (elements.slice(5).some((e) => e.checked)) {
-      percentage += 25;
-    }
+  const onChange = () => {
+    const percentage = calculatePercentageComplete(elementRef!.current);
     setPercentageComplete(percentage);
   };
 

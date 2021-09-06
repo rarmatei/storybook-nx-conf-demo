@@ -16,6 +16,10 @@ import {
 } from '@chakra-ui/react';
 import { calculatePercentageComplete } from './util';
 import { CommonUiProgressMeter } from '@storybook-test/common/ui-progress-meter';
+import {
+  CommonUiMultiSelect,
+  CommonUiMultiSelectProps,
+} from '@storybook-test/common/ui-multi-select';
 
 export function App() {
   const elementRef = useRef();
@@ -56,7 +60,7 @@ export function App() {
     setPercentageComplete(percentage);
   };
 
-  const toppings: UiMultiSelectProps['options'] = [
+  const toppings: CommonUiMultiSelectProps['options'] = [
     { label: '🍄 Mushrooms.json', value: 'mushrooms' },
     { label: '🧀 Generated Cheese', value: 'cheese' },
     { label: '🐟 Cached Tuna', value: 'tuna' },
@@ -72,7 +76,11 @@ export function App() {
         <UiInput name="firstName" label="Name" type="text" />
         <UiInput name="phoneNumber" label="Phone Number" type="number" />
         <CommonUiImageRadioButtons options={options} />
-        <UiMultiSelect name="toppings" label="Toppings" options={toppings} />
+        <CommonUiMultiSelect
+          name="toppings"
+          label="Toppings"
+          options={toppings}
+        />
         <CommonUiProgressMeter
           value={percentageComplete}
           size="sm"
@@ -97,29 +105,6 @@ export function App() {
     </div>
   );
 }
-
-interface UiMultiSelectProps {
-  name: string;
-  label: string;
-  options: { value: string; label: string }[];
-}
-
-const UiMultiSelect = ({ name, label, options }: UiMultiSelectProps) => {
-  return (
-    <FormControl name={name} my={4}>
-      <FormLabel fontWeight="bold" htmlFor={name}>
-        {label}
-      </FormLabel>
-      <Stack pl={6} mt={1} spacing={1}>
-        {options.map((option) => (
-          <Checkbox key={option.value} name={name} value={option.value}>
-            {option.label}
-          </Checkbox>
-        ))}
-      </Stack>
-    </FormControl>
-  );
-};
 
 const UiForm = React.forwardRef((props: any, ref: any) => {
   return (

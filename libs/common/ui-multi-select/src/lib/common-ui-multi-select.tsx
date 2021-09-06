@@ -1,15 +1,31 @@
 import React from 'react';
-
 import './common-ui-multi-select.module.css';
+import { Checkbox, FormControl, FormLabel, Stack } from '@chakra-ui/react';
 
-/* eslint-disable-next-line */
-export interface CommonUiMultiSelectProps {}
+export interface CommonUiMultiSelectProps {
+  name: string;
+  label: string;
+  options: { value: string; label: string }[];
+}
 
-export function CommonUiMultiSelect(props: CommonUiMultiSelectProps) {
+export function CommonUiMultiSelect({
+  name,
+  label,
+  options,
+}: CommonUiMultiSelectProps) {
   return (
-    <div>
-      <h1>Welcome to common-ui-multi-select!</h1>
-    </div>
+    <FormControl name={name} my={4}>
+      <FormLabel fontWeight="bold" htmlFor={name}>
+        {label}
+      </FormLabel>
+      <Stack pl={6} mt={1} spacing={1}>
+        {options.map((option) => (
+          <Checkbox key={option.value} name={name} value={option.value}>
+            {option.label}
+          </Checkbox>
+        ))}
+      </Stack>
+    </FormControl>
   );
 }
 

@@ -21,6 +21,7 @@ import {
   CommonUiMultiSelectProps,
 } from '@storybook-test/common/ui-multi-select';
 import { CommonUiForm } from '@storybook-test/common/ui-form';
+import { CommonUiInput } from '@storybook-test/common/ui-input';
 
 export function App() {
   const elementRef = useRef();
@@ -74,8 +75,8 @@ export function App() {
         <Heading as="h1" size="xl" textAlign="center">
           Nx Pizza
         </Heading>
-        <UiInput name="firstName" label="Name" type="text" />
-        <UiInput name="phoneNumber" label="Phone Number" type="number" />
+        <CommonUiInput name="firstName" label="Name" type="text" />
+        <CommonUiInput name="phoneNumber" label="Phone Number" type="number" />
         <CommonUiImageRadioButtons options={options} />
         <CommonUiMultiSelect
           name="toppings"
@@ -113,17 +114,6 @@ const UiDescribedImage = ({ description, imageSrc }) => {
       <Image maxW="100px" maxH="100px" src={imageSrc}></Image>
       <Text color="black">"{description}"</Text>
     </Stack>
-  );
-};
-
-const UiInput = ({ name, label, ...props }) => {
-  return (
-    <FormControl name={name} my={4}>
-      <FormLabel fontWeight="bold" htmlFor={name}>
-        {label}
-      </FormLabel>
-      <Input id={name} placeholder={label} {...props} />
-    </FormControl>
   );
 };
 

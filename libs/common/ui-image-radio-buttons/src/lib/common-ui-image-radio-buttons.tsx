@@ -1,7 +1,14 @@
 import React from 'react';
 
 import './common-ui-image-radio-buttons.module.css';
-import { Box, HStack, useRadio, useRadioGroup } from '@chakra-ui/react';
+import {
+  Box,
+  FormControl,
+  FormLabel,
+  HStack,
+  useRadio,
+  useRadioGroup,
+} from '@chakra-ui/react';
 
 export interface CommonUiImageRadioButtonsProps {
   options: { value: string; image: any }[];
@@ -19,16 +26,19 @@ export function CommonUiImageRadioButtons(
   const group = getRootProps();
 
   return (
-    <HStack {...group}>
-      {props.options.map((option) => {
-        const radio = getRadioProps({ value: option.value } as any);
-        return (
-          <RadioCard key={option.value} {...radio}>
-            {option.image}
-          </RadioCard>
-        );
-      })}
-    </HStack>
+    <FormControl name="toppings" my={4}>
+      <FormLabel fontWeight="bold">Pizza type</FormLabel>
+      <HStack {...group}>
+        {props.options.map((option) => {
+          const radio = getRadioProps({ value: option.value } as any);
+          return (
+            <RadioCard key={option.value} {...radio}>
+              {option.image}
+            </RadioCard>
+          );
+        })}
+      </HStack>
+    </FormControl>
   );
 }
 

@@ -5,7 +5,7 @@ import { Box, HStack, useRadio, useRadioGroup } from '@chakra-ui/react';
 
 export interface CommonUiImageRadioButtonsProps {
   options: { value: string; image: any }[];
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 }
 
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
@@ -13,7 +13,6 @@ export function CommonUiImageRadioButtons(
   props: CommonUiImageRadioButtonsProps
 ) {
   const { getRootProps, getRadioProps } = useRadioGroup({
-    defaultValue: props.options[0].value,
     onChange: props.onChange,
   });
 

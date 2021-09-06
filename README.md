@@ -8,14 +8,14 @@
 - add tags to the projects
   - see how I can explain it - maybe have one of the ui-libs import the feature?
   - maybe have someone in common import from a team?
-
-
+  
 Optional:
 - test out nx console - can I do an of the above in it?
-
-
 - recreate the above, memorise all the commands, but in old version of Nx - and then try the migrate commands 
-
 
 commands:
 npx create-nx-workspace --preset=react
+
+next steps:
+- extract into common components
+- create good storybooks that ineract well with the components

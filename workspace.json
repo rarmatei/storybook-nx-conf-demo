@@ -196,52 +196,6 @@
         }
       }
     },
-    "common-ui-described-image": {
-      "root": "libs/common/ui-described-image",
-      "sourceRoot": "libs/common/ui-described-image/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/common/ui-described-image/**/*.{ts,tsx,js,jsx}"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/common/ui-described-image"],
-          "options": {
-            "jestConfig": "libs/common/ui-described-image/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "storybook": {
-          "executor": "@nrwl/storybook:storybook",
-          "options": {
-            "uiFramework": "@storybook/react",
-            "port": 4400,
-            "config": {
-              "configFolder": "libs/common/ui-described-image/.storybook"
-            }
-          },
-          "configurations": { "ci": { "quiet": true } }
-        },
-        "build-storybook": {
-          "executor": "@nrwl/storybook:build",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "uiFramework": "@storybook/react",
-            "outputPath": "dist/storybook/common-ui-described-image",
-            "config": {
-              "configFolder": "libs/common/ui-described-image/.storybook"
-            }
-          },
-          "configurations": { "ci": { "quiet": true } }
-        }
-      }
-    },
     "common-ui-input": {
       "root": "libs/common/ui-input",
       "sourceRoot": "libs/common/ui-input/src",
@@ -365,34 +319,6 @@
             }
           },
           "configurations": { "ci": { "quiet": true } }
-        }
-      }
-    },
-    "common-ui-described-image-e2e": {
-      "root": "apps/common-ui-described-image-e2e",
-      "sourceRoot": "apps/common-ui-described-image-e2e/src",
-      "projectType": "application",
-      "targets": {
-        "e2e": {
-          "executor": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/common-ui-described-image-e2e/cypress.json",
-            "tsConfig": "apps/common-ui-described-image-e2e/tsconfig.e2e.json",
-            "devServerTarget": "common-ui-described-image:storybook"
-          },
-          "configurations": {
-            "ci": {
-              "devServerTarget": "common-ui-described-image:storybook:ci"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/common-ui-described-image-e2e/**/*.{js,ts}"
-            ]
-          }
         }
       }
     },

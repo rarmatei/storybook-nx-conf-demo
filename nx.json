@@ -28,14 +28,9 @@
     "order-pizza": { "tags": [] },
     "order-pizza-e2e": { "tags": [], "implicitDependencies": ["order-pizza"] },
     "common-ui-image-radio-buttons": { "tags": [] },
-    "common-ui-described-image": { "tags": [] },
     "common-ui-input": { "tags": [] },
     "common-ui-form": { "tags": [] },
     "common-ui-multi-select": { "tags": [] },
-    "common-ui-described-image-e2e": {
-      "tags": [],
-      "implicitDependencies": ["common-ui-described-image"]
-    },
     "common-ui-form-e2e": {
       "tags": [],
       "implicitDependencies": ["common-ui-form"]

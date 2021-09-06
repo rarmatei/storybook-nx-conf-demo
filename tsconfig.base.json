@@ -21,9 +21,6 @@
       "@storybook-test/common/ui-image-radio-buttons": [
         "libs/common/ui-image-radio-buttons/src/index.ts"
       ],
-      "@storybook-test/common/ui-described-image": [
-        "libs/common/ui-described-image/src/index.ts"
-      ],
       "@storybook-test/common/ui-input": ["libs/common/ui-input/src/index.ts"],
       "@storybook-test/common/ui-form": ["libs/common/ui-form/src/index.ts"],
       "@storybook-test/common/ui-multi-select": [

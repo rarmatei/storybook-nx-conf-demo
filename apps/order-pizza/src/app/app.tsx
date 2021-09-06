@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-
 import styles from './app.module.css';
 import { CommonUiImageRadioButtons } from '@storybook-test/common/ui-image-radio-buttons';
 import {
@@ -22,30 +21,30 @@ export function App() {
   const elementRef = useRef();
   const options = [
     {
-      value: 'first',
+      value: 'slice',
       image: (
-        <Stack alignItems="center">
-          <Image maxW="100px" maxH="100px" src="/assets/slice.png"></Image>
-          <Text color="black">"The Single Library"</Text>
-        </Stack>
+        <UiDescribedImage
+          imageSrc="/assets/slice.png"
+          description="The Single Library"
+        />
       ),
     },
     {
       value: 'half',
       image: (
-        <Stack alignItems="center">
-          <Image maxW="100px" maxH="100px" src="/assets/half.png"></Image>
-          <Text color="black">"The 50% cached"</Text>
-        </Stack>
+        <UiDescribedImage
+          imageSrc="/assets/half.png"
+          description="The 50% cached"
+        />
       ),
     },
     {
       value: 'full',
       image: (
-        <Stack alignItems="center">
-          <Image maxW="100px" maxH="100px" src="/assets/full.png"></Image>
-          <Text color="black">"The Full Monorepo"</Text>
-        </Stack>
+        <UiDescribedImage
+          imageSrc="/assets/full.png"
+          description="The Full Monorepo"
+        />
       ),
     },
   ];
@@ -131,6 +130,15 @@ const UiForm = React.forwardRef((props: any, ref: any) => {
     </Box>
   );
 });
+
+const UiDescribedImage = ({ description, imageSrc }) => {
+  return (
+    <Stack alignItems="center">
+      <Image maxW="100px" maxH="100px" src={imageSrc}></Image>
+      <Text color="black">"{description}"</Text>
+    </Stack>
+  );
+};
 
 const UiProgress = ({ value, ...props }) => {
   return <Progress value={value} {...props} />;

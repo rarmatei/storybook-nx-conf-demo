@@ -243,6 +243,94 @@
           }
         }
       }
+    },
+    "common-ui-described-image": {
+      "root": "libs/common/ui-described-image",
+      "sourceRoot": "libs/common/ui-described-image/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/ui-described-image/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/ui-described-image"],
+          "options": {
+            "jestConfig": "libs/common/ui-described-image/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "common-ui-input": {
+      "root": "libs/common/ui-input",
+      "sourceRoot": "libs/common/ui-input/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/common/ui-input/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/ui-input"],
+          "options": {
+            "jestConfig": "libs/common/ui-input/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "common-ui-form": {
+      "root": "libs/common/ui-form",
+      "sourceRoot": "libs/common/ui-form/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/common/ui-form/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/ui-form"],
+          "options": {
+            "jestConfig": "libs/common/ui-form/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "common-ui-multi-select": {
+      "root": "libs/common/ui-multi-select",
+      "sourceRoot": "libs/common/ui-multi-select/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/ui-multi-select/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/ui-multi-select"],
+          "options": {
+            "jestConfig": "libs/common/ui-multi-select/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

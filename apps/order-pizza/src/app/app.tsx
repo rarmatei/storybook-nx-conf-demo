@@ -11,11 +11,11 @@ import {
   Heading,
   Image,
   Input,
-  Progress,
   Stack,
   Text,
 } from '@chakra-ui/react';
 import { calculatePercentageComplete } from './util';
+import { CommonUiProgressMeter } from '@storybook-test/common/ui-progress-meter';
 
 export function App() {
   const elementRef = useRef();
@@ -34,7 +34,7 @@ export function App() {
       image: (
         <UiDescribedImage
           imageSrc="/assets/half.png"
-          description="The 50% cached"
+          description="The 50% affected"
         />
       ),
     },
@@ -57,7 +57,7 @@ export function App() {
   };
 
   const toppings: UiMultiSelectProps['options'] = [
-    { label: '🍄 Microfrontend Mushrooms', value: 'mushrooms' },
+    { label: '🍄 Mushrooms.json', value: 'mushrooms' },
     { label: '🧀 Generated Cheese', value: 'cheese' },
     { label: '🐟 Cached Tuna', value: 'tuna' },
     { label: '🍍 Dependency Graph Pineapple', value: 'pineapple' },
@@ -73,7 +73,7 @@ export function App() {
         <UiInput name="phoneNumber" label="Phone Number" type="number" />
         <CommonUiImageRadioButtons options={options} />
         <UiMultiSelect name="toppings" label="Toppings" options={toppings} />
-        <UiProgress
+        <CommonUiProgressMeter
           value={percentageComplete}
           size="sm"
           my={5}
@@ -144,10 +144,6 @@ const UiDescribedImage = ({ description, imageSrc }) => {
       <Text color="black">"{description}"</Text>
     </Stack>
   );
-};
-
-const UiProgress = ({ value, ...props }) => {
-  return <Progress value={value} {...props} />;
 };
 
 const UiInput = ({ name, label, ...props }) => {

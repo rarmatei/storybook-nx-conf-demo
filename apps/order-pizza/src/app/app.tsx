@@ -1,19 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styles from './app.module.css';
 import { CommonUiImageRadioButtons } from '@storybook-test/common/ui-image-radio-buttons';
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Checkbox,
-  FormControl,
-  FormLabel,
-  Heading,
-  Image,
-  Input,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { Button, ButtonGroup, Heading } from '@chakra-ui/react';
 import { calculatePercentageComplete } from './util';
 import { CommonUiProgressMeter } from '@storybook-test/common/ui-progress-meter';
 import {
@@ -22,6 +10,7 @@ import {
 } from '@storybook-test/common/ui-multi-select';
 import { CommonUiForm } from '@storybook-test/common/ui-form';
 import { CommonUiInput } from '@storybook-test/common/ui-input';
+import { CommonUiDescribedImage } from '@storybook-test/common/ui-described-image';
 
 export function App() {
   const elementRef = useRef();
@@ -29,7 +18,7 @@ export function App() {
     {
       value: 'slice',
       image: (
-        <UiDescribedImage
+        <CommonUiDescribedImage
           imageSrc="/assets/slice.png"
           description="The Single Library"
         />
@@ -38,7 +27,7 @@ export function App() {
     {
       value: 'half',
       image: (
-        <UiDescribedImage
+        <CommonUiDescribedImage
           imageSrc="/assets/half.png"
           description="The 50% affected"
         />
@@ -47,7 +36,7 @@ export function App() {
     {
       value: 'full',
       image: (
-        <UiDescribedImage
+        <CommonUiDescribedImage
           imageSrc="/assets/full.png"
           description="The Full Monorepo"
         />
@@ -107,14 +96,5 @@ export function App() {
     </div>
   );
 }
-
-const UiDescribedImage = ({ description, imageSrc }) => {
-  return (
-    <Stack alignItems="center">
-      <Image maxW="100px" maxH="100px" src={imageSrc}></Image>
-      <Text color="black">"{description}"</Text>
-    </Stack>
-  );
-};
 
 export default App;

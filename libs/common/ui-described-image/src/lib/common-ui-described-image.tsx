@@ -1,15 +1,22 @@
 import React from 'react';
 
 import './common-ui-described-image.module.css';
+import { Image, Stack, Text } from '@chakra-ui/react';
 
-/* eslint-disable-next-line */
-export interface CommonUiDescribedImageProps {}
+export interface CommonUiDescribedImageProps {
+  imageSrc: string;
+  description: string;
+}
 
-export function CommonUiDescribedImage(props: CommonUiDescribedImageProps) {
+export function CommonUiDescribedImage({
+  imageSrc,
+  description,
+}: CommonUiDescribedImageProps) {
   return (
-    <div>
-      <h1>Welcome to common-ui-described-image!</h1>
-    </div>
+    <Stack alignItems="center">
+      <Image maxW="100px" maxH="100px" src={imageSrc}></Image>
+      <Text color="black">"{description}"</Text>
+    </Stack>
   );
 }
 

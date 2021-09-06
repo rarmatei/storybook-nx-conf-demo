@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './common-ui-described-image.module.css';
+import './order-pizza-ui-pizza-image.module.css';
 import { Image, Stack, Text } from '@chakra-ui/react';
 
 export interface OrderPizzaUiPizzaImageProps {

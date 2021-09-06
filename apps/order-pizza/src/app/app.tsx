@@ -13,7 +13,7 @@ import { CommonUiInput } from '@storybook-test/common/ui-input';
 import { CommonUiDescribedImage } from '@storybook-test/common/ui-described-image';
 
 export function App() {
-  const elementRef = useRef();
+  const formRef = useRef();
   const options = [
     {
       value: 'slice',
@@ -46,8 +46,8 @@ export function App() {
 
   const [percentageComplete, setPercentageComplete] = useState(0);
 
-  const onChange = () => {
-    const percentage = calculatePercentageComplete(elementRef!.current);
+  const onFormChange = () => {
+    const percentage = calculatePercentageComplete(formRef!.current);
     setPercentageComplete(percentage);
   };
 
@@ -60,7 +60,7 @@ export function App() {
 
   return (
     <div className={styles.app}>
-      <CommonUiForm ref={elementRef} onChange={onChange}>
+      <CommonUiForm ref={formRef} onChange={onFormChange}>
         <Heading as="h1" size="xl" textAlign="center">
           Nx Pizza
         </Heading>
@@ -80,17 +80,10 @@ export function App() {
           isAnimated
         />
         <ButtonGroup spacing={4}>
-          <Button
-            disabled={percentageComplete < 100}
-            colorScheme="teal"
-            loadingText="Submitting"
-            variantColor="teal"
-          >
+          <Button disabled={percentageComplete < 100} colorScheme="teal">
             Place order
           </Button>
-          <Button variantColor="teal" variant="outline">
-            Reset
-          </Button>
+          <Button variant="outline">Reset</Button>
         </ButtonGroup>
       </CommonUiForm>
     </div>

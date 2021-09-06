@@ -56,6 +56,13 @@ export function App() {
     setPercentageComplete(percentage);
   };
 
+  const toppings: UiMultiSelectProps['options'] = [
+    { label: '🍄 Microfrontend Mushrooms', value: 'mushrooms' },
+    { label: '🧀 Generated Cheese', value: 'cheese' },
+    { label: '🐟 Cached Tuna', value: 'tuna' },
+    { label: '🍍 Dependency Graph Pineapple', value: 'pineapple' },
+  ];
+
   return (
     <div className={styles.app}>
       <UiForm ref={elementRef} onChange={onChange}>
@@ -65,7 +72,7 @@ export function App() {
         <UiInput name="firstName" label="Name" type="text" />
         <UiInput name="phoneNumber" label="Phone Number" type="number" />
         <CommonUiImageRadioButtons options={options} />
-        <UiMultiSelect />
+        <UiMultiSelect name="toppings" label="Toppings" options={toppings} />
         <UiProgress
           value={percentageComplete}
           size="sm"
@@ -91,25 +98,24 @@ export function App() {
   );
 }
 
-const UiMultiSelect = () => {
+interface UiMultiSelectProps {
+  name: string;
+  label: string;
+  options: { value: string; label: string }[];
+}
+
+const UiMultiSelect = ({ name, label, options }: UiMultiSelectProps) => {
   return (
-    <FormControl name="toppings" my={4}>
-      <FormLabel fontWeight="bold" htmlFor="toppings">
-        Toppings
+    <FormControl name={name} my={4}>
+      <FormLabel fontWeight="bold" htmlFor={name}>
+        {label}
       </FormLabel>
       <Stack pl={6} mt={1} spacing={1}>
-        <Checkbox name="toppings" value="mushrooms">
-          🍄 Microfrontend Mushrooms
-        </Checkbox>
-        <Checkbox name="toppings" value="cheese">
-          🧀 Generated Cheese
-        </Checkbox>
-        <Checkbox name="toppings" value="tuna">
-          🐟 Cached Tuna
-        </Checkbox>
-        <Checkbox name="toppings" value="pineapple">
-          🍍 Dependency Graph Pineapple
-        </Checkbox>
+        {options.map((option) => (
+          <Checkbox key={option.value} name={name} value={option.value}>
+            {option.label}
+          </Checkbox>
+        ))}
       </Stack>
     </FormControl>
   );

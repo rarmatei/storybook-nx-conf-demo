@@ -5,7 +5,10 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["libs/common/ui-described-image/tsconfig.*?.json"]
+        "project": [
+          "libs/common/ui-described-image/tsconfig.*?.json",
+          "libs/common/ui-described-image/.storybook/tsconfig.json"
+        ]
       },
       "rules": {}
     },

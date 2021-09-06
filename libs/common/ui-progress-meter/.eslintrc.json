@@ -5,7 +5,10 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["libs/common/ui-progress-meter/tsconfig.*?.json"]
+        "project": [
+          "libs/common/ui-progress-meter/tsconfig.*?.json",
+          "libs/common/ui-progress-meter/.storybook/tsconfig.json"
+        ]
       },
       "rules": {}
     },

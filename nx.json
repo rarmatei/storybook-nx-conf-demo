@@ -12,7 +12,15 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
     }
   },
   "projects": {
@@ -23,6 +31,30 @@
     "common-ui-described-image": { "tags": [] },
     "common-ui-input": { "tags": [] },
     "common-ui-form": { "tags": [] },
-    "common-ui-multi-select": { "tags": [] }
+    "common-ui-multi-select": { "tags": [] },
+    "common-ui-described-image-e2e": {
+      "tags": [],
+      "implicitDependencies": ["common-ui-described-image"]
+    },
+    "common-ui-form-e2e": {
+      "tags": [],
+      "implicitDependencies": ["common-ui-form"]
+    },
+    "common-ui-image-radio-buttons-e2e": {
+      "tags": [],
+      "implicitDependencies": ["common-ui-image-radio-buttons"]
+    },
+    "common-ui-input-e2e": {
+      "tags": [],
+      "implicitDependencies": ["common-ui-input"]
+    },
+    "common-ui-multi-select-e2e": {
+      "tags": [],
+      "implicitDependencies": ["common-ui-multi-select"]
+    },
+    "common-ui-progress-meter-e2e": {
+      "tags": [],
+      "implicitDependencies": ["common-ui-progress-meter"]
+    }
   }
 }

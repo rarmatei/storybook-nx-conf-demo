@@ -29,6 +29,29 @@
             "jestConfig": "libs/common/ui-progress-meter/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/common/ui-progress-meter/.storybook"
+            }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/common-ui-progress-meter",
+            "config": {
+              "configFolder": "libs/common/ui-progress-meter/.storybook"
+            }
+          },
+          "configurations": { "ci": { "quiet": true } }
         }
       }
     },
@@ -146,6 +169,29 @@
             "jestConfig": "libs/common/ui-image-radio-buttons/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/common/ui-image-radio-buttons/.storybook"
+            }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/common-ui-image-radio-buttons",
+            "config": {
+              "configFolder": "libs/common/ui-image-radio-buttons/.storybook"
+            }
+          },
+          "configurations": { "ci": { "quiet": true } }
         }
       }
     },
@@ -169,6 +215,29 @@
             "jestConfig": "libs/common/ui-described-image/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/common/ui-described-image/.storybook"
+            }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/common-ui-described-image",
+            "config": {
+              "configFolder": "libs/common/ui-described-image/.storybook"
+            }
+          },
+          "configurations": { "ci": { "quiet": true } }
         }
       }
     },
@@ -190,6 +259,25 @@
             "jestConfig": "libs/common/ui-input/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": { "configFolder": "libs/common/ui-input/.storybook" }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/common-ui-input",
+            "config": { "configFolder": "libs/common/ui-input/.storybook" }
+          },
+          "configurations": { "ci": { "quiet": true } }
         }
       }
     },
@@ -211,6 +299,25 @@
             "jestConfig": "libs/common/ui-form/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": { "configFolder": "libs/common/ui-form/.storybook" }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/common-ui-form",
+            "config": { "configFolder": "libs/common/ui-form/.storybook" }
+          },
+          "configurations": { "ci": { "quiet": true } }
         }
       }
     },
@@ -233,6 +340,183 @@
           "options": {
             "jestConfig": "libs/common/ui-multi-select/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/common/ui-multi-select/.storybook"
+            }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/common-ui-multi-select",
+            "config": {
+              "configFolder": "libs/common/ui-multi-select/.storybook"
+            }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        }
+      }
+    },
+    "common-ui-described-image-e2e": {
+      "root": "apps/common-ui-described-image-e2e",
+      "sourceRoot": "apps/common-ui-described-image-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/common-ui-described-image-e2e/cypress.json",
+            "tsConfig": "apps/common-ui-described-image-e2e/tsconfig.e2e.json",
+            "devServerTarget": "common-ui-described-image:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "common-ui-described-image:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/common-ui-described-image-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "common-ui-form-e2e": {
+      "root": "apps/common-ui-form-e2e",
+      "sourceRoot": "apps/common-ui-form-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/common-ui-form-e2e/cypress.json",
+            "tsConfig": "apps/common-ui-form-e2e/tsconfig.e2e.json",
+            "devServerTarget": "common-ui-form:storybook"
+          },
+          "configurations": {
+            "ci": { "devServerTarget": "common-ui-form:storybook:ci" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/common-ui-form-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "common-ui-image-radio-buttons-e2e": {
+      "root": "apps/common-ui-image-radio-buttons-e2e",
+      "sourceRoot": "apps/common-ui-image-radio-buttons-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/common-ui-image-radio-buttons-e2e/cypress.json",
+            "tsConfig": "apps/common-ui-image-radio-buttons-e2e/tsconfig.e2e.json",
+            "devServerTarget": "common-ui-image-radio-buttons:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "common-ui-image-radio-buttons:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/common-ui-image-radio-buttons-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "common-ui-input-e2e": {
+      "root": "apps/common-ui-input-e2e",
+      "sourceRoot": "apps/common-ui-input-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/common-ui-input-e2e/cypress.json",
+            "tsConfig": "apps/common-ui-input-e2e/tsconfig.e2e.json",
+            "devServerTarget": "common-ui-input:storybook"
+          },
+          "configurations": {
+            "ci": { "devServerTarget": "common-ui-input:storybook:ci" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/common-ui-input-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "common-ui-multi-select-e2e": {
+      "root": "apps/common-ui-multi-select-e2e",
+      "sourceRoot": "apps/common-ui-multi-select-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/common-ui-multi-select-e2e/cypress.json",
+            "tsConfig": "apps/common-ui-multi-select-e2e/tsconfig.e2e.json",
+            "devServerTarget": "common-ui-multi-select:storybook"
+          },
+          "configurations": {
+            "ci": { "devServerTarget": "common-ui-multi-select:storybook:ci" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/common-ui-multi-select-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "common-ui-progress-meter-e2e": {
+      "root": "apps/common-ui-progress-meter-e2e",
+      "sourceRoot": "apps/common-ui-progress-meter-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/common-ui-progress-meter-e2e/cypress.json",
+            "tsConfig": "apps/common-ui-progress-meter-e2e/tsconfig.e2e.json",
+            "devServerTarget": "common-ui-progress-meter:storybook"
+          },
+          "configurations": {
+            "ci": { "devServerTarget": "common-ui-progress-meter:storybook:ci" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/common-ui-progress-meter-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
